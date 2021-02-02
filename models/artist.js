@@ -1,11 +1,12 @@
-const {Schema, model} = require("mongoose")
+const mongoose = require("../db/connection");
 
+const Schema = mongoose.Schema;
 const artistSchema = new Schema({
   name: String,
   genre: String,
-  albums: [{ ref: "Album", type: mongoose.Schema.Types.ObjectId }],
+  albums: [{ ref: "Album", type: Schema.Types.ObjectId }],
 });
 
-const Artist = model("Artist", artistSchema);
+const Artist = mongoose.model("Artist", artistSchema);
 
 module.exports = Artist;
