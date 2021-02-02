@@ -1,1 +1,2 @@
-MONGODBURI=mongodb://localhost:27017/musicapi
+
+MONGODBURI=mongodb+srv://1207:1207@cluster0.qbsqv.mongodb.net/musicapi?retryWrites=true&w=majority
