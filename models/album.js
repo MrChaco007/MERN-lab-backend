@@ -1,10 +1,12 @@
-const mongoose = require("../db/connection")
+const mongoose = require("../db/connection");
 
-const albumSchema = new mongoose.Schema({
-    title: String, 
-    yearReleased: Number
-})
+const Schema = mongoose.Schema;
+const albumSchema = new Schema({
+  title: String,
+  yearReleased: Number,
+  img: String
+});
 
-const Album = mongoose.model("Album", albumSchema)
+const Album = mongoose.model("Album", albumSchema);
 
-module.exports = Album
+module.exports = Album;
