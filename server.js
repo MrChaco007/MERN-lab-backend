@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
     res.json({msg:"hello world"})
 })
 // Artist Routes send to artist router
-// app.use("/artist/", artistRouter);
+app.use("/artist/", artistRouter);
 // app.use("/album/", albumRouter)
 
 //LISTENER
