@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const Artist = require("../models/Artist");
+// const Artist = require("../models/Artist");
 // const Album = require("../models/album");
 
 router.get("/", async (req, res) => {
-  const data = await Artist.find({}).populate("album");
-  res.json({ status: 200, data: data });
+//   const data = await Artist.find({}).populate("album");
+  res.json({ status: 200, data: "msg" });
 });
 
 // router.get("/:name", async (req, res) => {
