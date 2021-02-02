@@ -14,7 +14,7 @@ const app = express();
 
 //OTHER IMPORTS
 const morgan = require("morgan");
-// const artistRouter = require("./controllers/artist");
+const artistRouter = require("./controllers/artist");
 // const albumRouter = require("./controllers/album")
 
 ////////////
