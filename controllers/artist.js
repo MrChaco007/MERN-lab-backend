@@ -8,11 +8,11 @@ router.get("/", async (req, res) => {
   res.json({ status: 200, data: data });
 });
 
-// router.get("/:name", async (req, res) => {
-//   Author.findOne({ firstName: req.params.name })
-//     .then((author) => res.json({ status: 200, artist: artist }))
-//     .catch((err) => res.json({ status: 400, err: err }));
-// });
+router.get("/:name", async (req, res) => {
+  Artist.findOne({ name: req.params.name })
+    .then((artist) => res.json({ status: 200, artist: artist }))
+    .catch((err) => res.json({ status: 400, err: err }));
+});
 
 router.post("/", async (req, res) => {
   const artist = req.body;
@@ -21,24 +21,24 @@ router.post("/", async (req, res) => {
   );
 });
 
-// router.put("/updateArtist/:id", async (req, res) => {
-//   const artist = await Artist.findByIdAndUpdate(req.params.id, req.body, {
-//     new: true,
-//   });
-//   res.json({ status: 200, data: artist });
-// });
+router.put("/updateArtist/:id", async (req, res) => {
+  const artist = await Artist.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+  });
+  res.json({ status: 200, data: artist });
+});
 
-// router.put("/:artistId/addAlbums/:albumId", async (req, res) => {
-//   const album = await Album.findById(req.params.albumId);
-//   const artist = await Artist.findByIdAndUpdate(req.params.artistId, {
-//     $push: { albums: album.id },
-//     new: true,
-//   });
-//   res.json({ status: 200, data: artist });
-// });
+router.put("/:artistId/addAlbums/:albumId", async (req, res) => {
+  const album = await Album.findById(req.params.albumId);
+  const artist = await Artist.findByIdAndUpdate(req.params.artistId, {
+    $push: { albums: album.id },
+    new: true,
+  });
+  res.json({ status: 200, data: artist });
+});
 
-// router.delete("/:id", async (req, res) => {
-//   res.json(await Artist.findByIdAndRemove(req.params.id));
-// });
+router.delete("/:id", async (req, res) => {
+  res.json(await Artist.findByIdAndRemove(req.params.id));
+});
 
 module.exports = router;

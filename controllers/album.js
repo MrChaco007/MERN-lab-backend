@@ -21,7 +21,7 @@ index();
 const show = () => {
   router.get("/:title", (req, res) => {
     Album.findOne({ title: req.params.title })
-      .then((cookbook) =>
+      .then((album) =>
         res.json({
           status: 200,
           album: album,
